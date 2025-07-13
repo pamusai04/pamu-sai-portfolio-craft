@@ -302,25 +302,42 @@ const Index = () => {
 
               {/* Social Icons */}
               <motion.div 
-                className="flex gap-6"
+                className="flex gap-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
               >
-                {[
-                  { icon: FaLinkedin, link: 'https://linkedin.com', color: 'text-blue-500' },
-                  { icon: FaGithub, link: 'https://github.com', color: 'text-foreground' },
-                  { icon: FaEnvelope, link: 'mailto:pai04102003@gmail.com', color: 'text-red-500' }
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.link}
-                    className={`${social.color} hover:scale-110 transition-transform text-2xl`}
-                    whileHover={{ y: -2 }}
-                  >
-                    <social.icon />
-                  </motion.a>
-                ))}
+                <motion.a
+                  href="https://linkedin.com/in/pamu-sai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="p-4 bg-background/70 backdrop-blur-sm rounded-xl border border-border hover:border-primary hover:bg-primary/10 hover:shadow-lg transition-all duration-300">
+                    <FaLinkedin className="text-2xl text-primary group-hover:text-primary-glow transition-colors" />
+                  </div>
+                </motion.a>
+                <motion.a
+                  href="https://github.com/pamu-sai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="p-4 bg-background/70 backdrop-blur-sm rounded-xl border border-border hover:border-primary hover:bg-primary/10 hover:shadow-lg transition-all duration-300">
+                    <FaGithub className="text-2xl text-primary group-hover:text-primary-glow transition-colors" />
+                  </div>
+                </motion.a>
+                <motion.a
+                  href="mailto:pai04102003@gmail.com"
+                  className="group"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="p-4 bg-background/70 backdrop-blur-sm rounded-xl border border-border hover:border-primary hover:bg-primary/10 hover:shadow-lg transition-all duration-300">
+                    <FaEnvelope className="text-2xl text-primary group-hover:text-primary-glow transition-colors" />
+                  </div>
+                </motion.a>
               </motion.div>
             </motion.div>
 
@@ -554,79 +571,107 @@ const Index = () => {
           </motion.div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Contact Info */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Email */}
               <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="group bg-background p-6 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -5 }}
               >
-                <div className="flex items-center gap-4">
-                  <FaEnvelope className="text-2xl text-primary" />
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+                    <FaEnvelope className="text-2xl text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">Email</p>
+                    <p className="font-semibold text-lg">Email</p>
                     <a
                       href="mailto:pai04102003@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       pai04102003@gmail.com
                     </a>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-4">
-                  <FaPhone className="text-2xl text-primary" />
-                  <div>
-                    <p className="font-semibold">Phone</p>
-                    <a
-                      href="tel:+916880489038"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      +91 6880489038
-                    </a>
-                  </div>
-                </div>
               </motion.div>
 
-              {/* Social Links */}
+              {/* LinkedIn */}
               <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="group bg-background p-6 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ y: -5 }}
               >
-                <div className="flex items-center gap-4">
-                  <FaLinkedin className="text-2xl text-blue-500" />
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+                    <FaLinkedin className="text-2xl text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">LinkedIn</p>
+                    <p className="font-semibold text-lg">LinkedIn</p>
                     <a
-                      href="https://linkedin.com"
+                      href="https://linkedin.com/in/pamu-sai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       Connect with me
                     </a>
                   </div>
                 </div>
+              </motion.div>
 
-                <div className="flex items-center gap-4">
-                  <FaGithub className="text-2xl text-foreground" />
+              {/* GitHub */}
+              <motion.div
+                className="group bg-background p-6 rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+                    <FaGithub className="text-2xl text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">GitHub</p>
+                    <p className="font-semibold text-lg">GitHub</p>
                     <a
-                      href="https://github.com"
+                      href="https://github.com/pamu-sai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
-                      View my repositories
+                      View repositories
                     </a>
                   </div>
                 </div>
               </motion.div>
             </div>
+
+            {/* Phone Section */}
+            <motion.div
+              className="mt-8 text-center"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="inline-flex items-center gap-3 bg-background p-4 rounded-xl border border-border">
+                <FaPhone className="text-xl text-primary" />
+                <div>
+                  <p className="font-semibold">Phone</p>
+                  <a
+                    href="tel:+916880489038"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    +91 6880489038
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -634,14 +679,19 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 bg-card border-t border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Dotted Line */}
+          <div className="flex justify-center mb-8">
+            <div className="w-32 border-t-2 border-dotted border-primary opacity-60"></div>
+          </div>
+          
           <motion.div
             className="text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <p className="text-muted-foreground flex items-center justify-center gap-2">
-              Handcrafted by Pamu Sai with <FaHeart className="text-red-500" /> © 2024
+            <p className="text-muted-foreground flex items-center justify-center gap-2 text-lg">
+              Handcrafted by <span className="text-primary font-semibold">Pamu Sai</span> with <FaHeart className="text-red-500 animate-pulse" /> © 2024
             </p>
           </motion.div>
         </div>
