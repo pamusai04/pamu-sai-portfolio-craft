@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaDownload, FaBars, FaTimes, FaHeart } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaDownload, FaBars, FaTimes, FaHeart, FaReact, FaJs, FaNode, FaHtml5, FaPython, FaDatabase, FaGitAlt, FaDocker } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb, SiFirebase } from 'react-icons/si';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { ClipLoader } from 'react-spinners';
 
@@ -32,19 +33,19 @@ const Index = () => {
   const animatedText = "I am a Web Developer...!";
   
   const skills = [
-    { name: 'React.js', level: 90 },
-    { name: 'JavaScript/TypeScript', level: 88 },
-    { name: 'Node.js', level: 85 },
-    { name: 'HTML5 & CSS3', level: 92 },
-    { name: 'Python', level: 80 },
-    { name: 'MongoDB', level: 78 },
-    { name: 'Express.js', level: 82 },
-    { name: 'Git & GitHub', level: 88 },
-    { name: 'Tailwind CSS', level: 90 },
-    { name: 'Next.js', level: 75 },
-    { name: 'RESTful APIs', level: 85 },
-    { name: 'Firebase', level: 72 },
-    { name: 'Docker', level: 68 }
+    { name: 'React.js', icon: FaReact },
+    { name: 'JavaScript', icon: FaJs },
+    { name: 'Node.js', icon: FaNode },
+    { name: 'HTML5 & CSS3', icon: FaHtml5 },
+    { name: 'Python', icon: FaPython },
+    { name: 'MongoDB', icon: SiMongodb },
+    { name: 'Express.js', icon: SiExpress },
+    { name: 'Git & GitHub', icon: FaGitAlt },
+    { name: 'Tailwind CSS', icon: SiTailwindcss },
+    { name: 'Next.js', icon: SiNextdotjs },
+    { name: 'RESTful APIs', icon: FaDatabase },
+    { name: 'Firebase', icon: SiFirebase },
+    { name: 'Docker', icon: FaDocker }
   ];
 
   const projects = [
@@ -361,29 +362,37 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                className="bg-background p-6 rounded-lg hover-scale shadow-lg hover:shadow-elegant transition-shadow"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <h3 className="font-semibold mb-3 text-center">{skill.name}</h3>
-                <div className="w-full bg-muted rounded-full h-2">
-                  <motion.div
-                    className="gradient-primary h-2 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                  />
-                </div>
-                <p className="text-center text-sm text-muted-foreground mt-2">{skill.level}%</p>
-              </motion.div>
-            ))}
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={skill.name}
+                  className="group bg-background p-6 rounded-lg shadow-lg hover:shadow-elegant transition-all duration-300 text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className="relative mb-4 flex justify-center">
+                    <motion.div
+                      className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 relative overflow-visible"
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Icon className="text-2xl text-primary group-hover:text-primary transition-colors duration-300" />
+                      <motion.div
+                        className="absolute inset-0 rounded-full border-2 border-primary opacity-0 group-hover:opacity-100"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.div>
+                  </div>
+                  <h3 className="font-semibold text-foreground">{skill.name}</h3>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
