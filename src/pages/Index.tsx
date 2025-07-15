@@ -298,7 +298,7 @@ const Index = () => {
                 </motion.button>
               </motion.div>
 
-              {/* Social Icons */}
+              {/* Social Icons with Water Balloon Effect */}
               <motion.div 
                 className="flex gap-4"
                 initial={{ opacity: 0 }}
@@ -309,31 +309,108 @@ const Index = () => {
                   href="https://linkedin.com/in/pamu-sai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center text-foreground hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 border border-border hover:border-primary"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="group w-14 h-14 flex items-center justify-center text-foreground rounded-full transition-all duration-500 border-2 border-transparent hover:border-blue-500 relative overflow-hidden"
+                  initial={{ scale: 1 }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { 
+                      type: "spring", 
+                      stiffness: 400, 
+                      damping: 10 
+                    }
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  onHoverStart={() => {}}
+                  onHoverEnd={() => {}}
                 >
-                  <FaLinkedin className="text-xl" />
+                  <motion.div
+                    className="absolute inset-0 bg-blue-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 15 
+                      }
+                    }}
+                    transition={{ 
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }}
+                  />
+                  <FaLinkedin className="text-xl z-10 group-hover:text-blue-400 transition-colors duration-300" />
                 </motion.a>
                 
                 <motion.a
                   href="https://github.com/pamu-sai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center text-foreground hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 border border-border hover:border-primary"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="group w-14 h-14 flex items-center justify-center text-foreground rounded-full transition-all duration-500 border-2 border-transparent hover:border-gray-400 relative overflow-hidden"
+                  initial={{ scale: 1 }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { 
+                      type: "spring", 
+                      stiffness: 400, 
+                      damping: 10 
+                    }
+                  }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <FaGithub className="text-xl" />
+                  <motion.div
+                    className="absolute inset-0 bg-gray-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 15 
+                      }
+                    }}
+                    transition={{ 
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }}
+                  />
+                  <FaGithub className="text-xl z-10 group-hover:text-gray-300 transition-colors duration-300" />
                 </motion.a>
                 
                 <motion.a
-                  href="mailto:pai04102003@gmail.com"
-                  className="w-12 h-12 flex items-center justify-center text-foreground hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 border border-border hover:border-primary"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  href="mailto:pamusai04102003@gmail.com"
+                  className="group w-14 h-14 flex items-center justify-center text-foreground rounded-full transition-all duration-500 border-2 border-transparent hover:border-red-400 relative overflow-hidden"
+                  initial={{ scale: 1 }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { 
+                      type: "spring", 
+                      stiffness: 400, 
+                      damping: 10 
+                    }
+                  }}
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <FaEnvelope className="text-xl" />
+                  <motion.div
+                    className="absolute inset-0 bg-red-500/20 rounded-full"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileHover={{ 
+                      scale: 1, 
+                      opacity: 1,
+                      transition: { 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 15 
+                      }
+                    }}
+                    transition={{ 
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }}
+                  />
+                  <FaEnvelope className="text-xl z-10 group-hover:text-red-400 transition-colors duration-300" />
                 </motion.a>
               </motion.div>
             </motion.div>
@@ -603,7 +680,7 @@ const Index = () => {
 
             {/* Email Icon */}
             <motion.a
-              href="mailto:pai04102003@gmail.com"
+              href="mailto:pamusai04102003@gmail.com"
               className="group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -616,32 +693,35 @@ const Index = () => {
               </div>
             </motion.a>
           </div>
+        </div>
+      </section>
 
-          {/* Contact Info */}
+      {/* Contact Info Bottom */}
+      <section className="py-8 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="mt-8 text-center space-y-4"
+            className="text-center space-y-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border hover:border-primary transition-colors">
                 <FaEnvelope className="text-lg text-primary" />
                 <a
-                  href="mailto:pai04102003@gmail.com"
+                  href="mailto:pamusai04102003@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  pai04102003@gmail.com
+                  pamusai04102003@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border hover:border-primary transition-colors">
                 <FaPhone className="text-lg text-primary" />
                 <a
-                  href="tel:+916880489038"
+                  href="tel:+917780489038"
                   className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
-                  +91 6880489038
+                  +91-7780489038
                 </a>
               </div>
             </div>
@@ -650,11 +730,11 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-card border-t border-border">
+      <footer className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Dotted Line */}
+          {/* Enhanced Dotted Line */}
           <div className="flex justify-center mb-8">
-            <div className="w-48 border-t-2 border-dotted border-primary/40"></div>
+            <div className="w-64 border-t-2 border-dotted border-primary/60"></div>
           </div>
           
           <motion.div
@@ -663,14 +743,22 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
+            <div className="mb-4">
+              <h3 className="text-2xl font-bold mb-2">
+                <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                  Handcrafted by
+                </span>
+              </h3>
+              <h2 className="text-3xl font-bold">
+                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  Pamu Sai
+                </span>
+              </h2>
+            </div>
             <p className="text-muted-foreground flex items-center justify-center gap-2 text-lg font-medium">
-              Handcrafted by 
-              <span className="text-primary font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Pamu Sai
-              </span> 
               with 
               <FaHeart className="text-red-500 animate-pulse" /> 
-              © 2024
+              © 2024 All rights reserved
             </p>
           </motion.div>
         </div>

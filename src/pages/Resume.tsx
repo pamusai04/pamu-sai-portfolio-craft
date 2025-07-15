@@ -7,7 +7,7 @@ const Resume = () => {
   const navigate = useNavigate();
 
   const downloadResume = () => {
-    alert('Resume download would start here. This is a demo.');
+    window.open('https://drive.google.com/file/d/1KQCWZynuMI1uXPxS-n2GOxmN3UrarvzU/view?usp=drive_link', '_blank');
   };
 
   return (
@@ -50,161 +50,196 @@ const Resume = () => {
           {/* Header Section */}
           <div className="bg-gradient-primary text-white p-8">
             <motion.h1 
-              className="text-4xl font-bold mb-2"
+              className="text-4xl font-bold mb-2 text-center"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Pamu Sai
+              SAI PAMU
             </motion.h1>
             <motion.p 
-              className="text-xl mb-4"
+              className="text-xl mb-4 text-center"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Full Stack Web Developer
+              Portfolio
             </motion.p>
             
             {/* Contact Info */}
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2">
+                <FaGithub />
+                <span>Github</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <FaEnvelope />
-                <span>pai04102003@gmail.com</span>
+                <span>pamusai04102003@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaPhone />
-                <span>+91 6880489038</span>
+                <span>+91-7780489038</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaLinkedin />
-                <span>linkedin.com/in/pamu-sai</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaGithub />
-                <span>github.com/pamu-sai</span>
+                <span>linkedin.com</span>
               </div>
             </div>
           </div>
 
           <div className="p-8 space-y-8">
-            {/* Professional Summary */}
+            {/* Education */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
               <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
-                Professional Summary
+                EDUCATION
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Passionate Full Stack Web Developer with expertise in modern web technologies including React.js, Node.js, and Python. 
-                Experienced in building responsive, user-friendly applications with clean, maintainable code. 
-                Strong problem-solving skills and commitment to delivering high-quality solutions that meet client requirements.
-              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left py-2 px-4 font-semibold">Degree</th>
+                      <th className="text-left py-2 px-4 font-semibold">Specialization</th>
+                      <th className="text-left py-2 px-4 font-semibold">Institute</th>
+                      <th className="text-left py-2 px-4 font-semibold">Year</th>
+                      <th className="text-left py-2 px-4 font-semibold">CGPA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border">
+                      <td className="py-2 px-4">B.Tech</td>
+                      <td className="py-2 px-4">Computer Science & Engineering</td>
+                      <td className="py-2 px-4">BESTIU</td>
+                      <td className="py-2 px-4">2021-2025</td>
+                      <td className="py-2 px-4">8.24</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 px-4">Intermediate(XII)</td>
+                      <td className="py-2 px-4">Physics, Chemistry, & Mathematics</td>
+                      <td className="py-2 px-4">A.P Model JR college</td>
+                      <td className="py-2 px-4">2021</td>
+                      <td className="py-2 px-4">7.21</td>
+                    </tr>
+                    <tr className="border-b border-border">
+                      <td className="py-2 px-4">Secondary(X)</td>
+                      <td className="py-2 px-4">-</td>
+                      <td className="py-2 px-4">Z.P High School</td>
+                      <td className="py-2 px-4">2019</td>
+                      <td className="py-2 px-4">8.8</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </motion.section>
 
-            {/* Skills */}
+            {/* Technical Skills */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
-                Technical Skills
+                TECHNICAL SKILLS
               </h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
                 <div>
-                  <h3 className="font-semibold mb-2">Frontend</h3>
-                  <p className="text-muted-foreground">React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Next.js, Responsive Design</p>
+                  <span className="font-semibold">• Programming Languages:</span>
+                  <span className="text-muted-foreground ml-2">C++, Java, JavaScript</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Backend</h3>
-                  <p className="text-muted-foreground">Node.js, Express.js, Python, RESTful APIs, Database Design</p>
+                  <span className="font-semibold">• Frontend Technologies:</span>
+                  <span className="text-muted-foreground ml-2">HTML, CSS, Tailwind CSS, ReactJS, JavaScript, Bootstrap, TypeScript</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Database</h3>
-                  <p className="text-muted-foreground">MongoDB, Firebase, SQL</p>
+                  <span className="font-semibold">• Backend Technologies:</span>
+                  <span className="text-muted-foreground ml-2">Node.js, Express.js, RESTful APIs</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Tools & Others</h3>
-                  <p className="text-muted-foreground">Git, GitHub, Docker, VS Code, Figma</p>
+                  <span className="font-semibold">• Databases & Tools:</span>
+                  <span className="text-muted-foreground ml-2">SQL, MongoDB, Git (Version Control)</span>
+                </div>
+                <div>
+                  <span className="font-semibold">• Data Structures & Algorithms:</span>
+                  <span className="text-muted-foreground ml-2">Strong understanding and implementation in C++</span>
                 </div>
               </div>
             </motion.section>
 
-            {/* Experience */}
+            {/* Projects */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
-                Projects & Experience
+                PROJECTS
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold">E-Commerce Platform</h3>
-                  <p className="text-primary font-medium">Full Stack Developer</p>
-                  <ul className="text-muted-foreground mt-2 space-y-1">
-                    <li>• Developed a complete e-commerce solution with payment integration</li>
-                    <li>• Implemented user authentication and authorization system</li>
-                    <li>• Created responsive UI with React.js and Tailwind CSS</li>
-                    <li>• Built RESTful APIs using Node.js and Express.js</li>
+                  <h3 className="text-xl font-semibold">• Ride-Sharing (Full-Stack Web Application) [College Project]</h3>
+                  <ul className="text-muted-foreground mt-2 space-y-1 ml-4">
+                    <li>◦ Created a multi-role platform (User/Driver/Admin) with MySQL database for managing ride bookings and approvals.</li>
+                    <li>◦ Implemented driver onboarding with document uploads (license, vehicle details) and admin approval workflow.</li>
+                    <li>◦ Developed user features: ride search, booking system, and driver matching based on location/city.</li>
+                    <li>◦ Built secure authentication for all roles with form validations (email, mobile, password strength)</li>
+                    <li>◦ <span className="font-semibold">Tech Stack:</span> PHP, MySQL, JavaScript, Bootstrap, HTML/CSS</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">Restaurant Management System</h3>
-                  <p className="text-primary font-medium">Frontend Developer</p>
-                  <ul className="text-muted-foreground mt-2 space-y-1">
-                    <li>• Created elegant restaurant website with online reservation system</li>
-                    <li>• Implemented real-time table booking functionality</li>
-                    <li>• Optimized for mobile devices and cross-browser compatibility</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Social Media Manager</h3>
-                  <p className="text-primary font-medium">Full Stack Developer</p>
-                  <ul className="text-muted-foreground mt-2 space-y-1">
-                    <li>• Built social media management platform with scheduling features</li>
-                    <li>• Integrated multiple social media APIs</li>
-                    <li>• Developed analytics dashboard for performance tracking</li>
+                  <h3 className="text-xl font-semibold">• Social Media Application (Full-Stack Web Application) [Self Project]</h3>
+                  <ul className="text-muted-foreground mt-2 space-y-1 ml-4">
+                    <li>◦ <span className="font-semibold">User Management:</span> Implemented secure authentication (JWT), registration, login, and password recovery.</li>
+                    <li>◦ <span className="font-semibold">Post Interactions:</span> Developed CRUD operations for posts (create, edit, delete) and engagement features (likes, comments).</li>
+                    <li>◦ <span className="font-semibold">Profile System:</span> Designed user profiles with customizable details and activity tracking.</li>
+                    <li>◦ <span className="font-semibold">Backend Security:</span> Built a secure Node.js API with MongoDB for data storage, ensuring protected user operations.</li>
+                    <li>◦ <span className="font-semibold">Tech Stack:</span> React.js, Node.js, Express, MongoDB, JWT, RESTful APIs</li>
                   </ul>
                 </div>
               </div>
             </motion.section>
 
-            {/* Education */}
+            {/* Work Experience */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
               <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
-                Education
+                WORK EXPERIENCE/INTERNSHIPS
               </h2>
               <div>
-                <h3 className="text-xl font-semibold">Bachelor's in Computer Science</h3>
-                <p className="text-primary font-medium">University Name</p>
-                <p className="text-muted-foreground">2020 - 2024</p>
+                <h3 className="text-xl font-semibold">• Web Developer Intern [GeoInfy Solutions]</h3>
+                <p className="text-primary font-medium mb-2">Sep-Dec 2023</p>
+                <ul className="text-muted-foreground space-y-1 ml-4">
+                  <li>◦ Developed interactive WebGIS applications using Leaflet.js and OpenLayers for geospatial data visualization.</li>
+                  <li>◦ Built efficient geospatial data management systems with GeoJSON, MySQL, and PHP, for storage and dynamic display.</li>
+                  <li>◦ Designed intuitive user interfaces with custom map controls and interactive layer toggles.</li>
+                  <li>◦ <span className="font-semibold">Tech Stack:</span> JavaScript, HTML/CSS, Leaflet.js, GeoJSON, MySQL, PHP.</li>
+                </ul>
               </div>
             </motion.section>
 
-            {/* Certifications */}
+            {/* Achievements */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
             >
               <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
-                Certifications
+                ACHIEVEMENTS
               </h2>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• React.js Development Certification</li>
-                <li>• Node.js Backend Development</li>
-                <li>• MongoDB Database Design</li>
-                <li>• Responsive Web Design</li>
-              </ul>
+              <div>
+                <h3 className="text-xl font-semibold">• Solved 200+ Coding Problems with 90% Accuracy [Problem Solving]</h3>
+                <ul className="text-muted-foreground mt-2 space-y-1 ml-4">
+                  <li>◦ Practiced and solved over 200 coding problems on platforms like LeetCode, Code 360 by Coding Ninjas and GeeksforGeeks, focusing on Data Structures and Algorithm optimization.</li>
+                  <li>◦ <span className="font-semibold">LeetCode:</span> SaiLeetCode</li>
+                  <li>◦ <span className="font-semibold">GeeksforGeeks:</span> SaiGFG</li>
+                  <li>◦ <span className="font-semibold">Code 360 by Coding Ninjas:</span> SaiCode360</li>
+                </ul>
+              </div>
             </motion.section>
           </div>
         </motion.div>
