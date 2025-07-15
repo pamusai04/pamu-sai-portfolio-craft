@@ -628,48 +628,7 @@ const Index = () => {
       </section>
 
       {/* Follow Me Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold mb-6 text-foreground">Follow Me</h2>
-          
-          <div className="flex justify-center space-x-4 mb-6">
-            <a
-              href="https://linkedin.com/in/pamu-sai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card hover:bg-accent transition-all duration-300"
-            >
-              <FaLinkedin className="w-5 h-5 text-foreground group-hover:scale-110 transition-transform duration-300" />
-            </a>
-            <a
-              href="https://github.com/pamu-sai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card hover:bg-accent transition-all duration-300"
-            >
-              <FaGithub className="w-5 h-5 text-foreground group-hover:scale-110 transition-transform duration-300" />
-            </a>
-            <a
-              href="mailto:pamusai04102003@gmail.com"
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card hover:bg-accent transition-all duration-300"
-            >
-              <FaEnvelope className="w-5 h-5 text-foreground group-hover:scale-110 transition-transform duration-300" />
-            </a>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <FaEnvelope className="w-4 h-4" />
-              <span>pamusai04102003@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <FaPhone className="w-4 h-4" />
-              <span>+91-7780489038</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="bg-background border-t border-border">
@@ -679,7 +638,101 @@ const Index = () => {
               Handcrafted by <span className="text-primary font-medium">Pamu Sai</span> © 2024
             </p>
           </div>
+        </div><section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-4">Follow Me</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Connect with me on social media and let's stay in touch
+            </p>
+          </motion.div>
+
+          <div className="flex justify-center gap-8">
+            {/* LinkedIn Icon */}
+            <motion.a
+              href="https://linkedin.com/in/pamu-sai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
+                <FaLinkedin className="text-3xl text-primary" />
+              </div>
+            </motion.a>
+
+            {/* GitHub Icon */}
+            <motion.a
+              href="https://github.com/pamu-sai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
+                <FaGithub className="text-3xl text-primary" />
+              </div>
+            </motion.a>
+
+            {/* Email Icon */}
+            <motion.a
+              href="mailto:pai04102003@gmail.com"
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
+                <FaEnvelope className="text-3xl text-primary" />
+              </div>
+            </motion.a>
+          </div>
+
+          {/* Contact Info */}
+          <motion.div
+            className="mt-8 text-center space-y-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border hover:border-primary transition-colors">
+                <FaEnvelope className="text-lg text-primary" />
+                <a
+                  href="mailto:pai04102003@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  pai04102003@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border hover:border-primary transition-colors">
+                <FaPhone className="text-lg text-primary" />
+                <a
+                  href="tel:+916880489038"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                >
+                  +91 6880489038
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
+      </section>
       </footer>
     </div>
   );
