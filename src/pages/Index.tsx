@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 // Import images
 import profileImage from '../assets/profile-image.jpg';
+import pamuSaiLogo from '../assets/pamu-sai-logo.png';
 import projectEcommerce from '../assets/project-ecommerce.jpg';
 import projectRestaurant from '../assets/project-restaurant.jpg';
 import projectFitness from '../assets/project-fitness.jpg';
@@ -55,61 +56,71 @@ const Index = () => {
       id: 1,
       title: 'E-Commerce Platform',
       image: projectEcommerce,
-      description: 'Full-stack e-commerce solution with payment integration'
+      description: 'Full-stack e-commerce solution with payment integration',
+      link: 'https://github.com/pamu-sai/ecommerce-platform'
     },
     {
       id: 2,
       title: 'Restaurant Website',
       image: projectRestaurant,
-      description: 'Elegant restaurant website with online reservation system'
+      description: 'Elegant restaurant website with online reservation system',
+      link: 'https://github.com/pamu-sai/restaurant-website'
     },
     {
       id: 3,
       title: 'Fitness Tracker',
       image: projectFitness,
-      description: 'Comprehensive fitness tracking dashboard with analytics'
+      description: 'Comprehensive fitness tracking dashboard with analytics',
+      link: 'https://github.com/pamu-sai/fitness-tracker'
     },
     {
       id: 4,
       title: 'Social Media Manager',
       image: projectSocial,
-      description: 'Social media management platform with scheduling features'
+      description: 'Social media management platform with scheduling features',
+      link: 'https://github.com/pamu-sai/social-media-app'
     },
     {
       id: 5,
       title: 'Banking App',
       image: projectBanking,
-      description: 'Secure banking application with transaction management'
+      description: 'Secure banking application with transaction management',
+      link: 'https://github.com/pamu-sai/banking-app'
     },
     {
       id: 6,
       title: 'Real Estate Portal',
       image: projectRealEstate,
-      description: 'Property listing platform with advanced search filters'
+      description: 'Property listing platform with advanced search filters',
+      link: 'https://github.com/pamu-sai/real-estate-portal'
     },
     {
       id: 7,
       title: 'Learning Management System',
       image: projectLMS,
-      description: 'Educational platform with course management and progress tracking'
+      description: 'Educational platform with course management and progress tracking',
+      link: 'https://github.com/pamu-sai/learning-management-system'
     },
     {
       id: 8,
       title: 'Music Streaming App',
       image: projectMusic,
-      description: 'Music streaming application with playlist management'
+      description: 'Music streaming application with playlist management',
+      link: 'https://github.com/pamu-sai/music-streaming-app'
     },
     {
       id: 9,
       title: 'Task Management Tool',
       image: projectTasks,
-      description: 'Project management tool with team collaboration features'
+      description: 'Project management tool with team collaboration features',
+      link: 'https://github.com/pamu-sai/task-management-tool'
     },
     {
       id: 10,
       title: 'Weather Forecast App',
       image: projectWeather,
-      description: 'Weather application with detailed forecasts and maps'
+      description: 'Weather application with detailed forecasts and maps',
+      link: 'https://github.com/pamu-sai/weather-forecast-app'
     }
   ];
 
@@ -138,9 +149,8 @@ const Index = () => {
     setIsMenuOpen(false);
   };
 
-  const handleProjectClick = (projectId: number) => {
-    console.log(`Navigating to project details for project ${projectId}`);
-    alert(`Project details page would open for project ${projectId}`);
+  const handleProjectClick = (projectLink: string) => {
+    window.open(projectLink, '_blank');
   };
 
   const handleResumeClick = () => {
@@ -160,11 +170,12 @@ const Index = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <motion.div 
-              className="text-2xl font-bold text-gradient cursor-pointer"
+              className="cursor-pointer flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
               onClick={() => scrollToSection('home')}
             >
-              &lt;Pamu Sai&gt;
+              <img src={pamuSaiLogo} alt="Pamu Sai Logo" className="w-10 h-10" />
+              <span className="text-2xl font-bold text-gradient">&lt;Pamu Sai&gt;</span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -495,7 +506,19 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+            <motion.h2 
+              className="text-4xl font-bold mb-4 cursor-default group"
+              whileHover={{ scale: 1.05 }}
+            >
+              <span className="group-hover:opacity-0 transition-opacity duration-300">Featured Projects</span>
+              <motion.span 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-primary"
+                initial={{ y: 10 }}
+                whileHover={{ y: 0 }}
+              >
+                My Real Projects
+              </motion.span>
+            </motion.h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               A showcase of my recent work and projects I'm proud of
             </p>
@@ -510,7 +533,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => handleProjectClick(project.id)}
+                onClick={() => handleProjectClick(project.link)}
                 whileHover={{ y: -10 }}
               >
                 <div className="relative overflow-hidden">
